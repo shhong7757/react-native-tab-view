@@ -200,7 +200,9 @@ export default class TabBar<T extends Route> extends React.Component<
   private getMaxScrollDistance = (tabBarWidth: number, layoutWidth: number) =>
     tabBarWidth - layoutWidth;
 
-  private getComputedContentContainerSpacing = (style?: StyleProp<ViewStyle>) => {
+  private getComputedContentContainerSpacing = (
+    style?: StyleProp<ViewStyle>
+  ) => {
     const contentStyle = StyleSheet.flatten(style);
 
     let space = 0;
@@ -218,7 +220,7 @@ export default class TabBar<T extends Route> extends React.Component<
     }
 
     if (typeof contentStyle?.paddingHorizontal === 'number') {
-      space += contentStyle.paddingHorizontal *2;
+      space += contentStyle.paddingHorizontal * 2;
     }
 
     if (typeof contentStyle?.paddingLeft === 'number') {
@@ -230,7 +232,7 @@ export default class TabBar<T extends Route> extends React.Component<
     }
 
     return space;
-  }
+  };
 
   private getTabBarWidth = (props: Props<T>, state: State) => {
     const { layout, tabWidths } = state;
